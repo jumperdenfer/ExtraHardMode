@@ -1,5 +1,5 @@
 
-# Warning, this Fork wasn't created to purpose a new version of the plugin, i recommand to use the officiel repository
+# Warning, this Fork wasn't created to purpose a new version of the plugin, i recommand to use the official repository
 
 ExtraHardMode
 =============
