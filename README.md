@@ -1,3 +1,6 @@
+
+# Warning, this Fork wasn't created to purpose a new version of the plugin, i recommand to use the officiel repository
+
 ExtraHardMode
 =============
 
@@ -14,4 +17,3 @@ We use maven to handle our dependencies.
 
 Development builds: Use at your own [risk.](https://ci.appveyor.com/project/RoboMWM39862/extrahardmode/build/artifacts)
 
-## Warning, this Fork wasn't created to purpose a new version of the plugin, i recommand to use the officiel repository
