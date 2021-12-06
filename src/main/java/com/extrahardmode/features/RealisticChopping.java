@@ -30,6 +30,7 @@ import com.extrahardmode.module.PlayerModule;
 import com.extrahardmode.service.Feature;
 import com.extrahardmode.service.ListenerModule;
 import com.extrahardmode.task.FallingLogsTask;
+
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.World;
@@ -96,11 +97,11 @@ public class RealisticChopping extends ListenerModule
         World world = block.getWorld();
         Player player = breakEvent.getPlayer();
 
-        final boolean betterTreeChoppingEnabled = false; //CFG.getBoolean(RootNode.BETTER_TREE_CHOPPING, world.getName());
+        final boolean betterTreeChoppingEnabled = CFG.getBoolean(RootNode.BETTER_TREE_CHOPPING, world.getName());
         final boolean playerHasBypass = playerModule.playerBypasses(player, Feature.REALISTIC_CHOPPING);
-
+      
         // FEATURE: trees chop more naturally
-        if (Tag.LOGS.isTagged(block.getType()) && betterTreeChoppingEnabled && !playerHasBypass)
+        if (Tag.LOGS.isTagged(block.getType()) && betterTreeChoppingEnabled)
         {
             //Are there any leaves above the log? -> tree
             boolean isTree = false;
@@ -109,14 +110,13 @@ public class RealisticChopping extends ListenerModule
                 Material upType = block.getRelative(BlockFace.UP, i).getType();
                 //skip to next iteration
                 //if something other than log/air this is most likely part of a building
-                if (Tag.LEAVES.isTagged(upType))
+                if (Tag.LEAVES.isTagged(upType) || Tag.LOGS.isTagged(upType) || upType.isAir()) 
                 {
                     isTree = true;
                     break;
                 }
-                else if (!Tag.LOGS.isTagged(upType))
-                {
-                    break;
+                else {
+                	break;
                 }
             }
 

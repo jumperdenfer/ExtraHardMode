@@ -203,10 +203,10 @@ public enum RootNode implements ConfigNode
 //    /**
 //     * whether tree logs respect gravity
 //     */
-//    BETTER_TREE_CHOPPING("World Rules.Better Tree Felling", VarType.BOOLEAN, true,
-//            "The trunk and branches of a tree will fall and potentially injure you.",
-//            "It makes it easier to chop trees, but you have to watch out a little for the falling logs.",
-//            "Also by making logs of branches fall down most treetops should decay naturally."),
+    BETTER_TREE_CHOPPING("World Rules.Better Tree Felling", VarType.BOOLEAN, true,
+            "The trunk and branches of a tree will fall and potentially injure you.",
+            "It makes it easier to chop trees, but you have to watch out a little for the falling logs.",
+            "Also by making logs of branches fall down most treetops should decay naturally."),
     /**
      * #################################
      * # ENHANCED ENVIRONMENTAL DAMAGE #

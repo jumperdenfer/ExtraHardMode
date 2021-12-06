@@ -48,6 +48,8 @@ import org.bukkit.event.block.BlockPistonExtendEvent;
 import org.bukkit.event.block.BlockPistonRetractEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.inventory.meta.Damageable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -164,7 +166,7 @@ public class HardenedStone extends ListenerModule
                     // otherwise, drastically reduce tool durability when breaking stone
                     if (hardEvent.getNumOfBlocks() > 0)
                     {
-                        player.setItemInHand(UtilityModule.damage(hardEvent.getTool(), hardEvent.getNumOfBlocks()));
+                        player.getInventory().setItemInMainHand(UtilityModule.damage(hardEvent.getTool(), hardEvent.getNumOfBlocks()));                        
                     }
                 }
                 if (hardEvent.getNumOfBlocks() == 0)
@@ -182,6 +184,7 @@ public class HardenedStone extends ListenerModule
             for (BlockFace face : blockModule.getTouchingFaces())
             {
                 Block adjacentBlock = block.getRelative(face);
+               
                 if (stoneBlocks.contains(adjacentBlock))
                 {
                     adjacentBlock.setType(stoneBlocks.get(adjacentBlock));
