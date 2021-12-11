@@ -153,7 +153,7 @@ public class MoreMonstersTask implements Runnable
         // Only spawn monsters in normal world. End is crowded with endermen and nether is too extreme anyway, add config later
         int lightLvl = 15;
         double yLoc = location.getY();
-        if (yLoc > 255 || yLoc < 0)
+        if (yLoc > 255 || yLoc < -60)
             lightLvl = location.getBlock().getLightFromSky();
         boolean worldOk = world.getEnvironment() == World.Environment.NORMAL;
         boolean depthOk = location.getY() < maxY;

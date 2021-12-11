@@ -107,7 +107,7 @@ public class Blazes extends ListenerModule
         }
 
         // FEATURE: blazes near bedrock
-        if (entityType == EntityType.SKELETON && world.getEnvironment() == World.Environment.NORMAL && location.getBlockY() < 20 && !EntityHelper.isMarkedAsOurs(entity))
+        if (entityType == EntityType.SKELETON && world.getEnvironment() == World.Environment.NORMAL && location.getBlockY() < -60 && !EntityHelper.isMarkedAsOurs(entity))
         {
             if (plugin.random(nearBedrockSpawnPercent))
             {
